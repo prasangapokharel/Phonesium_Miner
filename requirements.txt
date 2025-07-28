@@ -1,5 +1,5 @@
-requests>=2.25.1
-hashlib
+requests
 argparse
 threading
 datetime
+psutile
