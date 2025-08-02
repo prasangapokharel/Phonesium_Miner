@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-"""
-Phonesium Mining Client - Enhanced Version
-Like Duino-Coin but for Phonesium
-Advanced multi-threaded cryptocurrency miner with session management
-"""
+
 
 import hashlib
 import time
@@ -32,8 +27,8 @@ class PhonesiumMiner:
     
     def __init__(self):
         # Configuration
-        self.base_url = os.getenv('BASE_URL', 'https://shp.re')
-        self.api_url = f"{self.base_url}/api"
+        self.base_url = os.getenv('BASE_URL', 'http://192.168.1.77:8000/')
+        self.api_url = f"{self.base_url}/api.php"
         
         # Mining settings
         self.difficulty = int(os.getenv('DIFFICULTY', 5))
@@ -900,7 +895,7 @@ Examples:
     # Apply command line arguments
     if args.url:
         miner.base_url = args.url
-        miner.api_url = f"{args.url}/api"
+        miner.api_url = f"{args.url}/api.php"
         print(f"Using custom URL: {miner.api_url}")
     
     if args.clear_cache:

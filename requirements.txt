@@ -1,5 +1,3 @@
-requests>=2.25.1
-hashlib
-argparse
-threading
-datetime
+python-dotenv
+requests
+psutil
