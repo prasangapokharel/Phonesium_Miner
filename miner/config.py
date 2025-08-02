@@ -5,7 +5,7 @@ class MinerConfig:
     """Manages all configuration settings for the Phonesium Miner."""
     def __init__(self):
         self.base_url = os.getenv('BASE_URL', 'http://192.168.1.77:8000/')
-        self.api_url = f"{self.base_url}/api.php"
+        self.api_url = f"{self.base_url}/api"
         self.difficulty = int(os.getenv('DIFFICULTY', 5))
         self.api_secret = os.getenv('API_SECRET', 'TTXRESS2')
         self.timeout = int(os.getenv('TIMEOUT', 30))
@@ -24,7 +24,7 @@ class MinerConfig:
         """Updates configuration based on command-line arguments."""
         if args.url:
             self.base_url = args.url
-            self.api_url = f"{args.url}/api.php"
+            self.api_url = f"{args.url}/api"
         if args.threads:
             self.threads = min(args.threads, multiprocessing.cpu_count())
         if args.difficulty:
